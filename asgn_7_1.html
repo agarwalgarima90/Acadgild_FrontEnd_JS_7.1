@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 7.1</title>
+<style>
+        .like {
+                background-color: lightblue;
+                border: 2px solid orange;
+                border-radius: 5px;
+                color: white;
+                width: 100px;
+                height: 50px;
+        }
+        .unlike {
+                background-color: red;
+                border: 2px solid orange;
+                border-radius: 5px;
+                color: white;
+                width: 100px;
+                height: 50px;
+        }
+</style>
+
+<script>
+        window.onload = function() {
+                var wrapper = document.getElementById("divWrapper");
+        
+                var b = document.createElement("button");
+                b.setAttribute('content', 'test-content');
+                b.setAttribute('class', 'like');
+                b.innerHTML = 'LIKE';
+
+                wrapper.appendChild(b);
+        }
+
+        function test() {
+                var a = document.getElementById("divWrapper");
+                if(a.innerText == 'LIKE') {
+                        console.log("LIKE");
+                        a.innerHTML = "<button content='test' class='unlike'>UNLIKE</button>";
+                }
+                else {
+                        console.log("UNLIKE");
+                        a.innerHTML = "<button content='test' class='like'>LIKE</button>";
+                }
+
+        }
+
+
+</script>
+</head>
+<body>
+        <div id="divWrapper" onclick="test()"/>
+</body>
+</html>
